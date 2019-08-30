@@ -1,0 +1,249 @@
+    /* 共通スタイル */
+    body, h1, h2, h3, p{
+        margin: 0;
+        font-size: 1.0rem;
+    }
+
+    body{
+        font-family: 'Shin Go Regular', "Yu Gothic", sans-serif;
+        color: #444;
+        background: rgb(247,247,247);
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:hover {
+        opacity: .75;
+        text-decoration: underline;
+    }
+    
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    @media screen and (max-width: 960px){ /*幅960px以下のとき*/
+        
+        .container {
+            padding: 0 15px; 
+        }
+    }
+    
+
+
+
+
+    /* ヘッダー */
+    header {background: linear-gradient(to bottom, #444 0%, #222 100%); 
+        color: #fff; 
+        box-shadow: 0 1px 3px 0px rgba(0,0,0,.5);
+        margin-bottom: 2rem;}
+    
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 0;}
+
+
+
+
+
+    /* メインコンテンツ */
+    .main-inner {padding: 4rem 3.5rem;
+        background: #fff;
+        box-shadow: 0 0px 3px 2px rgba(0,0,0,.1);
+        margin-bottom: 2rem;
+    }
+
+    .flex-container-center {display: flex;
+        justify-content: center;
+}
+                
+            /* メインコンテンツ > フォーム */    
+            form {margin: 0 auto;}
+            ::placeholder{color: #ddd;}
+            label { display: inline-block;
+                    font-weight: bold;
+                    width: 14rem}
+
+            .form-parts {
+                margin-bottom: 1.5rem;
+            }
+
+            .sub-info {opacity: 0.5;
+                        font-size: 0.8rem}
+    
+            .hissu::after {content: "必須";
+                   color: #fff;
+                   font-size: 0.65rem;
+                   font-weight: normal;
+                   background: #999;
+                   border-radius: 5px;
+                   padding: 0.15rem 0.4rem;
+                   margin-left: 0.5rem;
+                   vertical-align: middle;
+                    }
+
+            #main-form input:not([type="submit"]) /* 詳細度 111 */
+             {border: none;
+                        border-radius: 15px;
+                        background: rgb(245,245,245);
+                        box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,.15);
+                        padding: 4px 15px;
+                        width: 14rem;
+                        line-height: 1.5;
+            }
+
+            #main-form input:not([type="submit"]):focus { /* 詳細度 112 */
+                outline: none;
+                box-shadow: inset 0px 0px 2px rgba(0,0,0,.1),
+                                        0px 0px 3px 0px rgba(49, 127, 199, 1);
+            }
+
+            input[type="submit"] {border: none;
+                        border-radius: 12px;
+                        box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,.1);
+                        padding: 0.3em 3em;
+                        background: rgb(90,90,90);
+                        color: #efefef;
+                        letter-spacing: 0.25rem;
+                        text-align: center;
+            }
+
+            input[type="submit"]:hover {opacity: 0.7;
+                                        transition: all 0.2s ease;
+    }
+            
+            
+            
+            
+            /* メインコンテンツ > モーダル関連 */
+            .button-like {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #444;
+            box-shadow: 0 1px 2px 1px rgba(0,0,0,.25);
+            background: linear-gradient( to bottom, #fff 0%, #ededed 100%);
+            padding: 5px 8px;
+            cursor: pointer;
+            
+            }
+
+            .button-like:hover {
+                opacity: 0.8;
+                transition: all 0.25s ease;
+                }
+
+            .modal {display: none;
+            position: absolute;
+            top: 120px;
+            left: 200px;
+            padding: 1.5rem 1.5rem 1.0rem;
+            background: #fff;
+            border: solid 1px #ededed;
+            box-shadow: 0px 0px 4px rgba(0,0,0,.2);}
+
+            .modal input, .modal p {margin: 0.5rem 0;}
+    
+
+    /* フォームバリデーション用スタイル */
+
+    [class^="alert"] {  color: #C7315A;
+                      font-weight: bold;  
+                      font-size: 0.9rem;
+                      display: none;
+    }
+
+  
+    #main-form input.not-valid , 
+    #main-form input.not-valid-chofuku  { /* 詳細度 111 */
+        box-shadow: inset 0px 0px 1px rgba(0,0,0,.1),
+                    0px 0px 4px 0px rgba(199, 49, 127, 1);
+    }            
+
+
+
+
+
+/* confirm 入力内容の確認ページ */    
+ 
+.confirm-dl {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto 30px;
+    }
+
+     dt {
+    padding:0.75rem 1rem;  
+    width:40%;
+    box-sizing: border-box;
+    border: solid #fff 1px;
+    vertical-align: middle;
+    }
+
+    .confirm-dl dd {
+    margin: 0;
+    padding:0.75rem 1rem;
+    border: solid #fff 1px;
+    box-sizing: border-box;
+    width: 60%;
+    }
+
+    .confirm-dl dt,
+    .confirm-dl dd {
+    background: #f8f8f8;
+    }
+
+    .confirm-dl dt:nth-of-type(even),
+    .confirm-dl dd:nth-of-type(even) {
+    background: #efefef;
+    }
+
+   
+    .confirm-dl .img-wrapper {
+      width: 100px;
+      height: 100px;
+      border: solid 1px #aaa;
+      overflow: hidden;
+      box-shadow: none;
+    }
+
+    .confirm-dl .img-wrapper img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    }
+
+
+
+/* new-member 会員ページ */
+.user-info-wrapper {
+    display: flex;
+    align-items: center;
+  }            
+
+  .img-wrapper {width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              box-shadow: 1px 1px 3px 2px rgba(0,0,0,1);
+    overflow: hidden;
+    margin-right: 0.5rem;
+    
+  }
+
+    .img-wrapper img {
+    width: 50px; height: 50px;
+    object-fit: cover;
+  }
+  .info-wrapper ul {list-style-type: none;}
+  .info-wrapper li {display: inline-block;}
+
+  .flex-space-between {padding: 0.25rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
